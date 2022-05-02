@@ -15,7 +15,7 @@ function setup() {
   sliderRange(0, 90, 1);
   gui = createGui('Choose a color for your spider');
   gui.addGlobals('SPIcolor');
-  for (var i = 0; i <1; i++){
+  for (var i = 0; i <15; i++){
 	bugs[i] = new Bug(random (0,width),random (0,height));
 	}
 }
@@ -37,7 +37,7 @@ function draw() {
 switch (state) {
     case "title":
       title();
-      break; 
+      break;
       case "lvl1":
     lvl1();
     break;
@@ -74,7 +74,7 @@ beginShape();
    vertex(width*0.5,height*0.2);
    vertex(width*0.5,height*0.225);
   endShape();
-  
+
   beginShape();
    vertex(width*0.4,height*0.22);
    vertex(width*0.5,height*0.14);
@@ -86,7 +86,7 @@ beginShape();
    vertex(width*0.5,height*0.14);
    vertex(width*0.5,height*0.165);
   endShape();
-  
+
     beginShape();
    vertex(width*0.35,height*0.2);
    vertex(width*0.5,height*0.07);
@@ -98,7 +98,7 @@ beginShape();
    vertex(width*0.5,height*0.07);
    vertex(width*0.5,height*0.105);
   endShape();
-  
+
      beginShape();
    vertex(width*0.3,height*0.16);
    vertex(width*0.5,height*0);
@@ -111,7 +111,7 @@ beginShape();
    vertex(width*0.5,height*0.045);
   endShape();
 pop();
-  
+
 }
 function spider(){
 //leg left 1
@@ -121,56 +121,56 @@ function spider(){
     line(width*0.46,height*0.56,width*0.5,height*0.53);
   strokeWeight(2.5);
   ellipse(width*0.5,height*0.53,width*0.015);
-  
+
 //leg left 2
    strokeWeight(3);
     line(width*0.43,height*0.57,width*0.48,height*0.6);
     line(width*0.43,height*0.57,width*0.44,height*0.51);
   strokeWeight(2.5);
   ellipse(width*0.44,height*0.5,width*0.015);
-  
-  //leg left 3 
+
+  //leg left 3
    strokeWeight(3);
     line(width*0.447,height*0.63,width*0.48,height*0.6);
     line(width*0.447,height*0.63,width*0.46,height*0.67);
   strokeWeight(2.5);
   ellipse(width*0.46,height*0.67,width*0.015);
-  
-// leg left 4 
+
+// leg left 4
      strokeWeight(3);
     line(width*0.48,height*0.62,width*0.473,height*0.63);
     line(width*0.473,height*0.63,width*0.485,height*0.66);
   strokeWeight(2.5);
   ellipse(width*0.485,height*0.66,width*0.015);
-  
-//leg right 1 
+
+//leg right 1
     strokeWeight(3);
     line(width*0.5,height*0.6,width*0.54,height*0.55);
     line(width*0.54,height*0.55,width*0.5,height*0.49);
     strokeWeight(2.5);
   ellipse(width*0.5,height*0.49,width*0.015);
-  
+
   //leg right 2
    strokeWeight(3);
     line(width*0.53,height*0.59,width*0.56,height*0.56);
     line(width*0.56,height*0.56,width*0.55,height*0.48);
   strokeWeight(2.5);
   ellipse(width*0.55,height*0.48,width*0.015);
-  
-// leg right 3 
+
+// leg right 3
      strokeWeight(3);
     line(width*0.52,height*0.6,width*0.55,height*0.63);
     line(width*0.55,height*0.63,width*0.54,height*0.68);
   strokeWeight(2.5);
   ellipse(width*0.54,height*0.68,width*0.015);
- // leg right 4 
+ // leg right 4
      strokeWeight(3);
     line(width*0.52,height*0.62,width*0.527,height*0.63);
     line(width*0.527,height*0.63,width*0.515,height*0.66);
   strokeWeight(2.5);
-  ellipse(width*0.515,height*0.66,width*0.015); 
-  
-  
+  ellipse(width*0.515,height*0.66,width*0.015);
+
+
 
 
 
@@ -222,7 +222,7 @@ function lvl1(){
 
   bugs[i].update();
 	bugs[i].display();
-  //if bug.length==0 go to game over screen 
+  //if bug.length==0 go to game over screen
 
       if (state == 'lvl1'){
         if(bugs.length == 1) {
@@ -255,21 +255,15 @@ function mousePressed() {
   }
     //console.log("click!");
 	for (var i = bugs.length - 1; i >= 0; i--){
-    
+
     if (bugs[i].isNear()) {
 
     bugs.splice(i,1);
       p = true;
- 
+
     }
     else {
       p = false;
     }
 }
 }
-
-
-
-
-
-
